@@ -3,9 +3,9 @@
     flex-wrap: wrap;
     flex-flow: row;
     background-color:white;
-    justify-content: space-between;
     padding:20px;
-    margin: 10px;   
+    margin: 10px;  
+    column-gap:50px; 
 }
 .col {
   flex: 1;
@@ -13,30 +13,26 @@
   padding: 50px;
   margin: 10px;
   border:10px;
-  width: ;
 }
 .col-2{
-    flex: 1;
+    flex: 3;
   background-color:rgb(140, 207, 175);
   padding: 50px;
   margin-left: 10px;
-  margin-right: 55px;
   margin-top:  10px;;
   margin-bottom:10px;
   border:10px;
-  width:33%;
 }
 .col-3{
-    flex: 1;
+    flex: 3;
     background-color:rgb(140, 207, 175);
     display: inline;
     padding:50px;
     padding-right:400px;
-    margin-right: 60px;
     margin-top:  10px;;
     margin-bottom:10px;
     border:10px;
-    
+    column-gap:50px;
 }
 
 
