@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.tasnime{
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    
+}
