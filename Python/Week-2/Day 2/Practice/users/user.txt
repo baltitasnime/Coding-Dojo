@@ -1,0 +1,24 @@
+SELECT * FROM users.users;
+insert into users (first_name,last_name,email) values
+("tasnime","balti","tasnime@gamil.com"),("james","doe","james@gmail.com"),("nawfel","benamor","nawfel@gmail.com");
+
+select * FROM users;
+
+select * FROM users.users where email="tasnime@gamil.com";
+
+select * FROM users where id=3;
+
+Update users.users
+set last_name="pancakes"
+where id=3;
+
+Delete From users.users
+where id=2;
+
+select * from users order by users.first_name;
+
+select * from users order by users.first_name DESC
+
+
+
+
