@@ -1,0 +1,38 @@
+SELECT * FROM dojos_and_ninjas.dojos;
+INSERT into dojos(name) values 
+("tasnime"),("bladee"),("thaiboy");
+
+SELECT * FROM dojos;
+
+
+delete from dojos
+where id=1;
+
+delete from dojos
+where id=2;
+
+delete from dojos
+where id=3;
+
+INSERT into dojos(name) values 
+("arca"),("yeat"),("mitski");
+
+SELECT * FROM ninjas;
+
+
+INSERT into ninjas(first_name,last_name,age,dojos_id) values 
+("cherry","glazer",23,4),("frank","ocean",27,4),("pink","guy",32,4);
+
+
+
+INSERT into ninjas(first_name,last_name,age,dojos_id) values 
+("tas","ba",55,5),("sad","ok",77,5),("ray","ban",99,5);
+
+
+INSERT into ninjas(first_name,last_name,age,dojos_id) values 
+("sameh","zr",26,6),("emili","rlk",33,6),("lola","jiji",21,6);
+
+
+SELECT * FROM ninjas join dojos on ninjas.dojos_id = dojos.id and ninjas.id=42;
+ 
+ SELECT * FROM ninjas join dojos on ninjas.dojos_id = dojos.id;
