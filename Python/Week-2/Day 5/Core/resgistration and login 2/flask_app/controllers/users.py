@@ -16,8 +16,7 @@ def dashboard():
 
 @app.route('/register', methods=['POST'])
 def register():
-    print ( "🚀"*10,request.form, "🚀"*10)
-    # if User.validate()
+
     data = {**request.form}
     # data={
     #     'first_name':request.form['first_name']
