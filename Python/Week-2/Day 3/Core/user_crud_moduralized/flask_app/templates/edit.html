@@ -10,7 +10,7 @@
     <div class="container">
         <div class="m-5 d-flex justify-content-between">
             <h1 class="">Edit User {{data.id}}</h1>
-            <a class="btn btn-lg btn-primary" href="/">Home</a>
+            <a class="btn btn-lg btn-primary" href="/users">Home</a>
         </div>
         <form class="col-5" action="/edit" method="post">
             <input type="hidden" name="id" value="{{data.id}}">
@@ -27,7 +27,7 @@
                 <input class="form-control" type="text" name="email" value="{{data.email}}">
             </div>
             <input class="btn btn-success m-5" type="submit" value="Update">
-            <a href="/users/{{data.id}}">Show User</a>
+            <a href="/users/show/{{data.id}}">Show User</a>
         </form>
     </div>
 </body>
