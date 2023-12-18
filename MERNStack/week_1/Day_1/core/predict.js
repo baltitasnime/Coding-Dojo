@@ -73,4 +73,3 @@ console.log(willThisWork);
 [ 1, 5, 1, 8, 3, 3 ]
 1
 5
-
