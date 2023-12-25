@@ -1,0 +1,17 @@
+.dojo{
+    display: flex;
+    justify-content:center ;
+    flex-direction: row;
+
+}
+
+.haha{
+    display: flex;
+    gap: 30px;
+}
+.ggg{
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+}
+
