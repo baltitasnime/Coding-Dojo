@@ -1,0 +1,147 @@
+switched to db my_first_db
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.createCollection("students")
+{ ok: 1 }
+
+
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.insertOne({name:"tasnime",home_state:"RA",lucky_number:1,Birthday: {month:06,day:26,year:2004}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('65957a6f30685072b3570272')
+}
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.student.find()
+
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId('65957a6f30685072b3570272'),
+    name: 'tasnime',
+    home_state: 'RA',
+    lucky_number: 1,
+    Birthday: { month: 6, day: 26, year: 2004 }
+  }
+]
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.insertOne({name:"lucye",home_state:"washingtonA",lucky_number:44,Birthday: {month:7,day:6,year:2009}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('65957fd430685072b3570273')
+}
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.insertOne({name:"Jane",home_state:"Seattle",lucky_number:8,Birthday: {month:9,day:23,year:2001}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6595804c30685072b3570274')
+}
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.insertOne({name:"Paul",home_state:"california",lucky_number:21,Birthday: {month:11,day:9,year:2002}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('659580ab30685072b3570275')
+}
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.insertOne({name:"chris",home_state:"washington",lucky_number:9,Birthday: {month:12,day:16,year:2003}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6595811a30685072b3570276')
+}
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.sr
+my_first_db.sr
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId('65957a6f30685072b3570272'),
+    name: 'tasnime',
+    home_state: 'RA',
+    lucky_number: 1,
+    Birthday: { month: 6, day: 26, year: 2004 }
+  },
+  {
+    _id: ObjectId('65957fd430685072b3570273'),
+    name: 'lucye',
+    home_state: 'washingtonA',
+    lucky_number: 44,
+    Birthday: { month: 7, day: 6, year: 2009 }
+  },
+  {
+    _id: ObjectId('6595804c30685072b3570274'),
+    name: 'Jane',
+    home_state: 'Seattle',
+    lucky_number: 8,
+    Birthday: { month: 9, day: 23, year: 2001 }
+  },
+  {
+    _id: ObjectId('659580ab30685072b3570275'),
+    name: 'Paul',
+    home_state: 'california',
+    lucky_number: 21,
+    Birthday: { month: 11, day: 9, year: 2002 }
+  },
+  {
+    _id: ObjectId('6595811a30685072b3570276'),
+    name: 'chris',
+    home_state: 'washington',
+    lucky_number: 9,
+    Birthday: { month: 12, day: 16, year: 2003 }
+  }
+]
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.find(home_state:"california")
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:27)
+
+> 1 | db.students.find(home_state:"california")
+    |                            ^
+  2 |
+
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.find({home_state:"california"})
+[
+  {
+    _id: ObjectId('659580ab30685072b3570275'),
+    name: 'Paul',
+    home_state: 'california',
+    lucky_number: 21,
+    Birthday: { month: 11, day: 9, year: 2002 }
+  }
+]
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.find({home_state:"washington"})
+[
+  {
+    _id: ObjectId('6595811a30685072b3570276'),
+    name: 'chris',
+    home_state: 'washington',
+    lucky_number: 9,
+    Birthday: { month: 12, day: 16, year: 2003 }
+  }
+]
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.find({lucky_number>3})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:30)
+
+
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> db.students.find({lucky_number:{$gt:3}})
+[
+  {
+    _id: ObjectId('65957fd430685072b3570273'),
+    name: 'lucye',
+    home_state: 'washingtonA',
+    lucky_number: 44,
+    Birthday: { month: 7, day: 6, year: 2009 }
+  },
+  {
+    _id: ObjectId('6595804c30685072b3570274'),
+    name: 'Jane',
+    home_state: 'Seattle',
+    lucky_number: 8,
+    Birthday: { month: 9, day: 23, year: 2001 }
+  },
+  {
+    _id: ObjectId('659580ab30685072b3570275'),
+    name: 'Paul',
+    home_state: 'california',
+    lucky_number: 21,
+    Birthday: { month: 11, day: 9, year: 2002 }
+  },
+  {
+    _id: ObjectId('6595811a30685072b3570276'),
+    name: 'chris',
+    home_state: 'washington',
+    lucky_number: 9,
+    Birthday: { month: 12, day: 16, year: 2003 }
+  }
+]
+Atlas atlas-f6tx8w-shard-0 [primary] my_first_db> 
